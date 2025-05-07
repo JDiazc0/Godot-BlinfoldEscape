@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://civrd5ewslnuj"]
+
+[ext_resource type="Texture2D" uid="uid://030nlpooxj00" path="res://Assets/SpriteSheets/Enviroment/SpriteSheetTerrain.png" id="1_apeex"]
+[ext_resource type="Script" path="res://Scripts/Hazards/Spikes.cs" id="1_h8e2s"]
+[ext_resource type="Texture2D" uid="uid://bqxypv3vj75wq" path="res://Assets/SpriteSheets/Enviroment/light.png" id="3_4qoqo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjc3y"]
+atlas = ExtResource("1_apeex")
+region = Rect2(320, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bitsh"]
+atlas = ExtResource("1_apeex")
+region = Rect2(320, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx24a"]
+atlas = ExtResource("1_apeex")
+region = Rect2(320, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmnqb"]
+atlas = ExtResource("1_apeex")
+region = Rect2(320, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6173"]
+atlas = ExtResource("1_apeex")
+region = Rect2(320, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_757a0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjc3y")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bitsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx24a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmnqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6173")
+}],
+"loop": false,
+"name": &"warning",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf3u5"]
+size = Vector2(16, 16)
+
+[node name="Spike" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_h8e2s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_757a0")
+animation = &"warning"
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gf3u5")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.0355021, 0.0355021)
+color = Color(0.681843, 0.114548, 3.85046e-07, 1)
+texture = ExtResource("3_4qoqo")

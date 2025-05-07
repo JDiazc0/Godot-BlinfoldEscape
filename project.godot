@@ -24,6 +24,10 @@ window/size/viewport_height=700
 
 project/assembly_name="Godot-BlinfoldEscape"
 
+[global_group]
+
+Player=""
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
