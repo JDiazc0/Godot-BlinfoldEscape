@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds4bc5raqosrw"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/ColorTweener.cs" id="1_0ny3f"]
+
+[node name="ColorTweener" type="Node2D"]
+script = ExtResource("1_0ny3f")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

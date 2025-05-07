@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://nw07e74g274i"]
+[gd_scene load_steps=34 format=3 uid="uid://nw07e74g274i"]
 
 [ext_resource type="Texture2D" uid="uid://xhaew1kvvqva" path="res://Assets/SpriteSheets/Characters/Idle (32x32).png" id="1_u3wh2"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerMovement.cs" id="1_x5qxb"]
 [ext_resource type="Texture2D" uid="uid://cnl68dyw1lmtp" path="res://Assets/SpriteSheets/Characters/Fall (32x32).png" id="3_6alrm"]
 [ext_resource type="Texture2D" uid="uid://cwrvfuo2573j3" path="res://Assets/SpriteSheets/Characters/Jump (32x32).png" id="4_vqw54"]
 [ext_resource type="Texture2D" uid="uid://by38yjfpbc6p4" path="res://Assets/SpriteSheets/Characters/Run (32x32).png" id="5_4n7j5"]
+[ext_resource type="Texture2D" uid="uid://bqxypv3vj75wq" path="res://Assets/SpriteSheets/Enviroment/light.png" id="6_i0ln0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqiad"]
 radius = 19.0
@@ -222,3 +223,9 @@ sprite_frames = SubResource("SpriteFrames_te0ek")
 animation = &"jump"
 autoplay = "default"
 flip_h = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.0958252, 0.0958252)
+color = Color(0.270588, 1, 1, 1)
+energy = 0.5
+texture = ExtResource("6_i0ln0")

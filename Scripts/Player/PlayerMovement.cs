@@ -30,7 +30,7 @@ public partial class PlayerMovement : CharacterBody2D
 			velocity.Y = JumpVelocity;
 		}
 
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "", "");
+		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
