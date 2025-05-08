@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqt2u8i6ld4e1"]
+[gd_scene load_steps=14 format=3 uid="uid://cqt2u8i6ld4e1"]
 
 [ext_resource type="Texture2D" uid="uid://030nlpooxj00" path="res://Assets/SpriteSheets/Enviroment/SpriteSheetTerrain.png" id="1_d1o2o"]
 [ext_resource type="Script" path="res://Scripts/Environment/CoffeeLighter.cs" id="1_kc8ma"]
+[ext_resource type="Script" path="res://Scripts/Environment/FluctuatingLight.cs" id="1_wyjbe"]
 [ext_resource type="Texture2D" uid="uid://bqxypv3vj75wq" path="res://Assets/SpriteSheets/Enviroment/light.png" id="2_e18xn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrup8"]
@@ -66,7 +67,7 @@ radius = 7.0
 
 [node name="Coffee" type="Area2D"]
 z_index = -1
-scale = Vector2(2.68601, 2.68601)
+scale = Vector2(2, 2)
 script = ExtResource("1_kc8ma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -78,7 +79,13 @@ frame_progress = 0.507054
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d3ax1")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_wyjbe")
+_maxSize = 1.0
+_maxEnergy = 0.7
+_fluctuationSpeed = 3.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
 z_index = -1
 scale = Vector2(0.0390625, 0.0390625)
 color = Color(1, 1, 0.32549, 1)
