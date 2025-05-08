@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqt2u8i6ld4e1"]
+
+[ext_resource type="Texture2D" uid="uid://030nlpooxj00" path="res://Assets/SpriteSheets/Enviroment/SpriteSheetTerrain.png" id="1_d1o2o"]
+[ext_resource type="Script" path="res://Scripts/Environment/CoffeeLighter.cs" id="1_kc8ma"]
+[ext_resource type="Texture2D" uid="uid://bqxypv3vj75wq" path="res://Assets/SpriteSheets/Enviroment/light.png" id="2_e18xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrup8"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sonyy"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4bdo"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cafu"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qemis"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a2q2"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6g6l"]
+atlas = ExtResource("1_d1o2o")
+region = Rect2(288, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_er640"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrup8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sonyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4bdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cafu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qemis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a2q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6g6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3ax1"]
+radius = 7.0
+
+[node name="Coffee" type="Area2D"]
+z_index = -1
+scale = Vector2(2.68601, 2.68601)
+script = ExtResource("1_kc8ma")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_er640")
+autoplay = "default"
+frame_progress = 0.507054
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d3ax1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = -1
+scale = Vector2(0.0390625, 0.0390625)
+color = Color(1, 1, 0.32549, 1)
+texture = ExtResource("2_e18xn")
