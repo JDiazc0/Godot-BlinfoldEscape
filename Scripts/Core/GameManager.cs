@@ -24,6 +24,12 @@ public partial class GameManager : Node
 		}
 	}
 
+	public void StartGame()
+	{
+		_currentLevelIndex = 0;
+		LoadCurrentLevel();
+	}
+
 	public void LoadCurrentLevel()
 	{
 		GetTree().ChangeSceneToFile(_levels[_currentLevelIndex]);
