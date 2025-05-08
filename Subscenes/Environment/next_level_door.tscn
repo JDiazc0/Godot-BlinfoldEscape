@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvck5urxmleyy"]
+
+[ext_resource type="Texture2D" uid="uid://le50u28em20" path="res://Assets/SpriteSheets/Enviroment/Exit.png" id="1_7k41n"]
+[ext_resource type="Script" path="res://Scripts/Environment/NextLevelDoor.cs" id="1_x8sj7"]
+[ext_resource type="Script" path="res://Scripts/Environment/FluctuatingLight.cs" id="2_weta7"]
+[ext_resource type="Texture2D" uid="uid://bqxypv3vj75wq" path="res://Assets/SpriteSheets/Enviroment/light.png" id="3_427jh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j27un"]
+size = Vector2(16, 32)
+
+[node name="NextLevelDoor" type="Area2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_x8sj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_7k41n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j27un")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_weta7")
+_minSize = 0.2
+_maxSize = 1.5
+_minEnergy = 0.2
+_maxEnergy = 1.0
+_fluctuationSpeed = 5.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+z_index = -1
+scale = Vector2(0.0390625, 0.0390625)
+color = Color(0.283883, 0.410255, 1, 1)
+texture = ExtResource("3_427jh")
