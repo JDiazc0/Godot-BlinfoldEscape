@@ -4,11 +4,11 @@ using System;
 public partial class FluctuatingLight : Node2D
 {
 	[Export] public PointLight2D _light;
-	private float _minSize = 0.5f;
-	private float _maxSize = 1.3f;
-	private float _minEnergy = 0.5f;
-	private float _maxEnergy = 1.5f;
-	private float _fluctuationSpeed = 1.5f;
+	[Export] public float _minSize = 0.5f;
+	[Export] public float _maxSize = 1.3f;
+	[Export] public float _minEnergy = 0.5f;
+	[Export] public float _maxEnergy = 1.5f;
+	[Export] public float _fluctuationSpeed = 1.5f;
 	private Tween _fluctuationTween;
 
 	public override void _Ready()
