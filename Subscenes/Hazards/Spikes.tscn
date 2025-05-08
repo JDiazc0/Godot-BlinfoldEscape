@@ -61,7 +61,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Spike" type="Area2D"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 script = ExtResource("1_h8e2s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
